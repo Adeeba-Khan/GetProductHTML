@@ -1,11 +1,12 @@
 const express = require('express');
 const path = require('path');
 const app= express();
+const productRouter =  require('./router/product');
+app.use(express.static('public'));
+app.use(express.json());
+app.use('/api/products',productRouter);
 
-app.get('/api/products',(req,res)=>{
-    res.sendFile(path.join(__dirname,'views','products.html'));
 
-});
 app.listen(4000,()=>{
     console.log("Server is running at port 4000");
 });

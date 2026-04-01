@@ -6,16 +6,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form method="POST" action="/api/products">
+    <form method="POST" onsubmit="onSubmitForm(event)">
         <label for="product">
-            Product id 
-            <input id="product" type="text">
-        </label>
-        <label>
-            Product Name
-            <input id ="productName" tyep="text">
+            Product name
+            <input id="product" name="productName" type="text">
         </label>
   <button type="submit">Add products</button>
     </form>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="/js/product.js"></script>
 </body>
 </html>
